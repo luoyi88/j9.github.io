@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
+    <defs>
+        <circle id="path-1" cx="26" cy="26" r="26"></circle>
+        <circle id="path-3" cx="26" cy="26" r="26"></circle>
+        <linearGradient x1="6.96607219%" y1="-15.0502396%" x2="88.3057745%" y2="101.98754%" id="linearGradient-5">
+            <stop stop-color="#FFCA3F" offset="0%"></stop>
+            <stop stop-color="#FDEC99" offset="48.3009178%"></stop>
+            <stop stop-color="#FEC42D" offset="78.6829052%"></stop>
+            <stop stop-color="#FFB80D" offset="100%"></stop>
+            <stop stop-color="#FFAB08" offset="100%"></stop>
+        </linearGradient>
+        <ellipse id="path-6" cx="16.25" cy="28.6" rx="22.1" ry="20.8"></ellipse>
+        <filter x="-4.5%" y="-4.8%" width="109.0%" height="109.6%" filterUnits="objectBoundingBox" id="filter-7">
+            <feGaussianBlur stdDeviation="1.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="1" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.752941176   0 0 0 0 0.121568627  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Oval-4">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Oval" fill="#BB85DC" xlink:href="#path-1"></use>
+            <mask id="mask-4" fill="white">
+                <use xlink:href="#path-3"></use>
+            </mask>
+            <use id="Oval" fill="#BB85DC" xlink:href="#path-3"></use>
+            <ellipse id="Oval" fill="#FFA4A7" opacity="0.488031432" mask="url(#mask-4)" cx="46.8" cy="58.5" rx="17.55" ry="18.2"></ellipse>
+            <ellipse id="Oval" fill="#F4EEFF" opacity="0.204805596" mask="url(#mask-4)" transform="translate(43.665847, 11.993495) rotate(-14.000000) translate(-43.665847, -11.993495) " cx="43.6658467" cy="11.9934954" rx="14.95" ry="13.1911765"></ellipse>
+            <ellipse id="Oval" fill="#FFFFFF" opacity="0.204805596" mask="url(#mask-4)" cx="48.1" cy="34.45" rx="3.9" ry="3.25"></ellipse>
+            <g id="Oval" mask="url(#mask-4)">
+                <use fill="url(#linearGradient-5)" fill-rule="evenodd" xlink:href="#path-6"></use>
+                <use fill="black" fill-opacity="1" filter="url(#filter-7)" xlink:href="#path-6"></use>
+            </g>
+            <ellipse id="Oval" fill="#3C1601" mask="url(#mask-4)" cx="22.8944444" cy="22.3166667" rx="1.95" ry="4.55"></ellipse>
+            <ellipse id="Oval" fill="#3C1601" mask="url(#mask-4)" cx="31.9944444" cy="23.6166667" rx="1.95" ry="4.55"></ellipse>
+            <path d="M20.8293773,32.5841308 C22.3726301,31.098123 24.0535471,29.9867461 25.8721283,29.25 C27.6907094,28.5132539 29.2422961,28.1273612 30.5268884,28.0923218" id="Path-26" stroke="#000000" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" mask="url(#mask-4)" transform="translate(25.678133, 30.338226) rotate(-144.000000) translate(-25.678133, -30.338226) "></path>
+            <path d="M6.66827352,9.94831986 C4.51415916,17.624063 4.96071899,24.924623 8.00795301,31.85 C11.055187,38.775377 15.8006842,44.0494237 22.2444444,47.6721402 L16.25,49.4 L8.00795301,49.4 L-11.093291,31.85 L-1.3,11.9934954 L6.66827352,9.94831986 Z" id="Path-27" fill="#9D6F00" opacity="0.158770894" mask="url(#mask-4)"></path>
+            <g id="Group-2" mask="url(#mask-4)">
+                <g transform="translate(8.392532, 32.953872) rotate(5.000000) translate(-8.392532, -32.953872) translate(-1.898514, 26.294864)">
+                    <path d="M0,0 C0,0 2.58155628,5.2978865 8.21720079,7.45988595 C11.3273788,8.65304195 13.7883118,9.19519692 15.6,9.08635087" id="Path-21" stroke="#72B9FF" stroke-width="2.1" fill="none" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M15.2564299,12.4936979 C17.162816,13.0045125 19.2172033,12.9732973 19.9487669,10.6073216 C20.6803305,8.24134601 18.6718119,6.67955162 16.7654259,6.16873702 C14.8590398,5.65792242 12.9559002,6.5788113 12.5146445,8.22559991 C12.0733888,9.87238852 13.3500439,11.9828833 15.2564299,12.4936979 Z" id="Oval" stroke="none" fill="#72B9FF" fill-rule="evenodd" transform="translate(16.265008, 9.393418) rotate(-9.000000) translate(-16.265008, -9.393418) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

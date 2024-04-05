@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="google" content="notranslate">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="/plugins/element.css">
+  <script type="text/javascript" src="/js/pinyin_dict_notone.js"></script>
+  <script type="text/javascript" src="/js/pinyinUtil.js"></script>
+  <script type="text/javascript" src="/config/index.js"></script>
+
+  <title>J9九游会-真人游戏第一品牌</title>
+
+  <style>
+    body {
+      background-color: #171a21;
+    }
+
+    .app-page {
+      margin: 0;
+    }
+
+    .loading_box {
+      background: #000;
+    }
+
+    .loading_box .loading {
+      display: block;
+      width: 180px;
+      height: 55px;
+      margin: 0 auto;
+      position: fixed;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body class="app-page">
+  <noscript>
+    <strong>We're sorry but j9.live doesn't work properly without JavaScript enabled.
+      Please enable it to continue.</strong>
+  </noscript>
+  <div id="app">
+    <div id="preload">
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
+                              <div>
+                                <div>
+                                  <div>
+                                    <div>
+                                      <div>
+                                        <div>
+                                          <div>
+                                            <div>
+                                              <div>
+                                                <div>
+                                                  <div>
+                                                    <div>
+                                                      <div>
+                                                        <div class="loading_box">
+                                                          <img src="/loading/J9EN.svg" class="loading">
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    document.write('<script type="text/javascript" src="/saconfig/yunwei.js?' + Math.random() + '"></' + 'script>');
+  </script>
+
+  <script>
+    var isPro = true
+      var files = {"js":["/cdn/tus5r4F/js/chunk-vendors.843c7c82.js","/cdn/tus5r4F/js/app.d5145ea8.js"],"css":["/cdn/tus5r4F/css/chunk-vendors.315678e7.css","/cdn/tus5r4F/css/app.d94d8cc8.css"]}
+      function init() {
+  // 是否支持webp格式图片
+  window.check_support_webp = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0
+  window.THREEUPLOAD = {}
+  window.THREEUPLOAD.t_3s_html_cdn = []
+}
+
+/**
+ * cdn选址方法
+ * @param {callBack} 选址回调函数
+ */
+function cdnPing(callBack) {
+  if (window.yunweiConfig.cdns.length == 0) {
+    localStorage.removeItem('fastcdn')
+    callBack()
+    return
+  }
+
+  // 如果localStorage里面已经存了, 并且在n秒以内
+  var cdnInfo = localStorage.getItem('fastcdn')
+  if (cdnInfo) {
+    var cdn = JSON.parse(cdnInfo)
+    if (Date.now() - cdn.time < 1000 * window.yunweiConfig.cdnCacheSeconds) {
+      var fastUrl = cdn.url
+      window.yunweiConfig.cdnServer = fastUrl
+      callBack()
+
+      // localStorage里缓存的cdn可能已经失效了， 异步做个检查， 如果失败了， 就把缓存清掉， 刷新则重新选址
+      var xhr = new XMLHttpRequest()
+      xhr.timeout = 20 * 1000
+      xhr.open('GET', fastUrl + window.yunweiConfig.cdnPath + '/cdn_test.txt', true)
+      xhr.onerror = function (e) {
+        localStorage.removeItem('fastcdn')
+        location.reload()
+      }
+      xhr.ontimeout = function (e) {
+        localStorage.removeItem('fastcdn')
+        location.reload()
+      }
+      xhr.send()
+
+      return
+    }
+  }
+
+  // 超过五分钟, 或者没存过, 测速
+  localStorage.removeItem('fastcdn')
+  var reqs = []
+  var fails = 0
+  var cdns = window.yunweiConfig.cdns
+
+  // 请求失败处理
+  var failCallBack = function () {
+    fails += 1
+    if (fails == cdns.length) {
+      window.yunweiConfig.cdnServer = location.origin
+      callBack()
+    }
+  }
+
+  // 开始选址
+  for (var i = 0; i < cdns.length; i++) {
+    var xhr = new XMLHttpRequest()
+    xhr.url = cdns[i]
+    xhr.timeout = 3000 // 请求超过3s， 就用域名
+    reqs.push(xhr)
+    xhr.open('GET', cdns[i] + window.yunweiConfig.cdnPath + '/cdn_test.txt?' + Date.now(), true)
+
+    // 如果每个请求成功, 则测速结束了, 停止未完成的请求, 并把最快的cdn存到localStorage里
+    xhr.onload = function (e) {
+      if (e.target.status != 200) {
+        failCallBack()
+      } else {
+        var fastUrl = e.target.url.split(window.yunweiConfig.cdnPath)[0]
+        var cdn = {
+          url: fastUrl,
+          time: Date.now(),
+        }
+        // 选址成功, 存入localStorage
+        localStorage.setItem('fastcdn', JSON.stringify(cdn))
+        window.yunweiConfig.cdnServer = fastUrl
+        for (var i = 0; i < reqs.length; i++) {
+          if (reqs[i].url != fastUrl) reqs[i].abort()
+        }
+        callBack()
+      }
+    }
+
+    // 如果请求失败
+    xhr.onerror = failCallBack
+    // 如果请求超时
+    xhr.ontimeout = failCallBack
+
+    xhr.send()
+  }
+}
+/**
+ *
+ * @param {files}  要创建的js和css的文件资源
+ */
+function createTags(files) {
+  createdCss(files.css, window.yunweiConfig.cdnServer)
+  createdJs(files.js, window.yunweiConfig.cdnServer, false)
+  createdJs(
+    [`${window.yunweiConfig.cdnPath}/3s_web_detect.js?product=tus5r4&module=frontend_web&v=0105`],
+    window.yunweiConfig.cdnServer,
+    true
+  )
+  createdJs([`${window.yunweiConfig.cdnPath}/remove.js`], window.yunweiConfig.cdnServer, false)
+}
+
+/**
+ *
+ * @param {srcs} 要创建的css标签的文件资源对象
+ * @param {host} 标签的cdn路径
+ */
+function createdCss(srcs, host) {
+  for (var i = 0; i < srcs.length; i++) {
+    var styleTag = document.createElement('link')
+    styleTag.href = host + srcs[i]
+    styleTag.rel = 'stylesheet'
+    styleTag.type = 'text/css'
+    document.getElementsByTagName('head')[0].appendChild(styleTag)
+  }
+}
+
+/**
+ *
+ * @param {srcs} 要创建的js标签的文件资源对象
+ * @param {host} 标签的cdn路径
+ */
+function createdJs(srcs, host, async) {
+  for (var i = 0; i < srcs.length; i++) {
+    var jsTag = document.createElement('script')
+    jsTag.src = host + srcs[i]
+    if (async) jsTag.async = 'async'
+    document.body.appendChild(jsTag)
+  }
+}
+
+function ieVersion() {
+  var userAgent = navigator.userAgent // 取得浏览器的userAgent字符串
+  var isIE = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1 // 判断是否IE<11浏览器
+  var isEdge = userAgent.indexOf('Edge') > -1 && !isIE // 判断是否IE的Edge浏览器
+  var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1
+  if (isIE) {
+    window.location.href = '/version_tips/index.html'
+  } else if (isEdge) {
+    return 'edge' // edge
+  } else if (isIE11) {
+    return 11 // IE11
+  } else {
+    return -1 // 不是ie浏览器
+  }
+}
+
+// google统计
+function gogleAnalytic() {
+  window.ga =
+    window.ga ||
+    function () {
+      ;(ga.q = ga.q || []).push(arguments)
+    }
+  ga.l = +new Date()
+  ga('create', 'UA-124269635-1', 'auto')
+  var info = sessionStorage.getItem('vuex')
+  var customer = info ? JSON.parse(info).customer : {}
+  ga('set', 'userId', customer.rfCode || '')
+  ga('send', 'pageview')
+}
+
+function addCdnMsg(e) {
+  var cdnMsg = {
+    url: e.target.src,
+    type: e.type,
+    rsptime: e.timeStamp,
+  }
+  window.THREEUPLOAD.t_3s_html_cdn.push(cdnMsg)
+}
+
+      init()
+    if (isPro) {
+      //如果需要选址
+      cdnPing(function () {
+        createTags(files)
+      })
+    }
+  </script>
+
+  <!-- google统计 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6L9ZP3QXXM"></script>
+  <script>
+    // 谷歌统计
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-6L9ZP3QXXM');
+  </script>
+</body>
+
+</html>
